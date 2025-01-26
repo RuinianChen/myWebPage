@@ -7,6 +7,9 @@ const port = 80; // 设置服务器运行端口为 80（HTTP 默认端口）
 // 设置静态文件目录，将 public 文件夹中的内容作为静态资源托管
 app.use(express.static('public'));
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'html', 'home.html'));
+});
 // 启动服务器
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
