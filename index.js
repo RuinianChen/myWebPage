@@ -16,8 +16,6 @@ app.get('/', (req, res) => {
 });
 
 // 启动服务器
-app.listen(PORT, () => {
-    console.log(`Server is running at:`);
-    console.log(`- http://localhost:${PORT}/ (local access)`);
-    console.log(`- http://${require('os').hostname()}:${PORT}/ (network access)`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running at http://0.0.0.0:${PORT}`);
 });
